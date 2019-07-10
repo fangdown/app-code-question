@@ -561,3 +561,62 @@ string 类型是可迭代的。扩展运算符将迭代的每个字符映射成�
 
 </p>
 </details>
+
+###### 20. 写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？
+
+<details><summary><b>答案</b></summary>
+<p>
+
+> key是给每一个vnode的唯一id,可以依靠key,更准确, 更快的拿到oldVnode中对应的vnode节点。
+1. 更准确
+因为带key就不是就地复用了，在sameNode函数 a.key === b.key对比中可以避免就地复用的情况。所以会更加准确。
+
+2. 更快
+利用key的唯一性生成map对象来获取对应节点，比遍历方式更快。(这个观点，就是我最初的那个观点。从这个角度看，map会比遍历更快。)
+
+3. 没有key在diff时会就地复用，速度更快，单没有达到设计的目的
+</p>
+</details>
+
+###### 21. ['1', '2', '3'].map(parseInt) what & why ?
+
+<details><summary><b>答案</b></summary>
+<p>
+
+parseInt
+parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)。
+
+const intValue = parseInt(string[, radix]);
+string 要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用 ToString 抽象操作)。字符串开头的空白符将会被忽略。
+
+radix 一个介于2和36之间的整数(数学系统的基础)，表示上述字符串的基数。默认为10。
+返回值 返回一个整数或NaN
+```
+parseInt(100); // 100
+parseInt(100, 10); // 100
+parseInt(100, 2); // 4 -> converts 100 in base 2 to base 10
+```
+注意：
+在radix为 undefined，或者radix为 0 或者没有指定的情况下，JavaScript 作如下处理：
+
+如果字符串 string 以"0x"或者"0X"开头, 则基数是16 (16进制).
+如果字符串 string 以"0"开头, 基数是8（八进制）或者10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出radix参数的值。
+如果字符串 string 以其它任何值开头，则基数是10 (十进制)。
+
+parseInt('1', 0) //radix为0时，且string参数不以“0x”和“0”开头时，按照10为基数处理。这个时候返回1
+
+parseInt('2', 1) //基数为1（1进制）表示的数中，最大值小于2，所以无法解析，返回NaN
+
+parseInt('3', 2) //基数为2（2进制）表示的数中，最大值小于3，所以无法解析，返回NaN
+
+以上代码实际执行的是
+```js
+['1', '2', '3'].map((item, index) => {
+	return parseInt(item, index)
+})
+parseInt('1', 0) // 1
+parseInt('2', 1) // NaN
+parseInt('3', 2) // NaN, 3 不是二进制
+```
+</p>
+</details>
