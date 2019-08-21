@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用promise封装ajax</title>
+</head>
+<body>
+  请用promise封装ajax
+  用跨域浏览器访问，测试
+  <div id="result"></div>
+  <script src="./ajax.js"></script>
+  <script>
+    var getData = ajax('http://api.fangdown.cn/api/app')
+    getData.then(function(data){
+      console.log('data', data)
+      document.getElementById('result').innerText = JSON.parse(data.data).userName
+    })
+  </script>
+</body>
+</html>
