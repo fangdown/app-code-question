@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局-圣杯布局</title>
+</head>
+<body>
+    <style>
+        .left-center-right{
+          padding: 0 200px;
+        }
+        .left{
+          float: left;
+          margin-left: -100%;
+          position: relative;
+          left: -200px;
+          width: 200px;
+        }
+        .center{
+          float: left;
+          width: 100%;
+          background-color: #eeeeee
+        }
+        .right{
+          float: left;
+          margin-left: -200px;
+          right: -200px;
+          position: relative;
+          width: 200px;
+        }
+      </style>
+      <div class="left-center-right">
+        <div class="center">据灯塔专业版数据，8月21日15时许，电影《哪吒之魔童降世》上映27天，票房超过《复仇者联盟4》，跃居中国影史票房第三。前两位分别是《战狼2》和《流浪地球》。</div>
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+      </div>
+</body>
+</html>
