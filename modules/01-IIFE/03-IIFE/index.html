@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IIFE模式</title>
+</head>
+<body>
+    /**
+    * IIFE模式: 匿名函数自调用(闭包)<br/>
+    * IIFE : immediately-invoked function expression(立即调用函数表达式)<br/>
+    * 作用: 数据是私有的, 外部只能通过暴露的方法操作<br/>
+    * 问题: 如果当前这个模块依赖另一个模块怎么办?<br/>
+    */
+    <br/>
+    <br/>
+    打开控制台，看结果
+    <script src="./module.js"></script>
+    <script>
+      module1.foo()
+      module1.data = 'baidu.com' // 不能修改内部数据
+      module1.foo()
+    </script>
+</body>
+</html>

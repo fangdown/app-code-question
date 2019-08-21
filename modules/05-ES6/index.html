@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>es6模块</title>
+</head>
+<body>
+    npm install babel-cli browserify -g <br/>
+    npm install babel-preset-es2015 –save-dev<br/>
+    preset 预设(将es6转换成es5的所有插件打包)<br/>
+    使用Babel将ES6编译为ES5代码(但包含CommonJS语法) : babel js/src -d js/lib<br/>
+    使用Browserify编译js : browserify js/lib/app.js -o js/lib/bundle.js<br/>
+    <script src="./js/lib/bundle.js"></script>
+</body>
+</html>

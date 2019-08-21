@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>命名空间模式</title>
+</head>
+<body>
+  命名空间模式，减少了全局变量，不安全，数据不是私有的
+
+  <br/>
+  打开控制台，看结果
+  <script src="./module1.js"></script>
+  <script src="./module2.js"></script>
+  <script>
+    module1.foo()
+    module1.bar()
+    
+    module2.foo()
+    module2.bar()
+    module1.data = 'baidu.com' // 能直接修改数据
+    module1.foo()
+  </script>
+</body>
+</html>

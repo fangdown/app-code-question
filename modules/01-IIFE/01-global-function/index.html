@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>全局变量</title>
+</head>
+<body>
+  全局function<br/>
+  <script src="./module1.js"></script>
+  <script src="./module2.js"></script>
+  <script>
+    let body = document.querySelector('body')
+    body.append(foo())
+    body.appendChild(document.createElement('br'))
+    body.append(bar())
+    foo()
+    bar()
+  </script>
+</body>
+</html>

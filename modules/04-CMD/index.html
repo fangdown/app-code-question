@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CMD模式</title>
+</head>
+<body>
+
+使用seajs:<br/>
+  1. 引入sea.js库<br/>
+  2. 如何定义导出模块 :<br/>
+    define()<br/>
+    exports<br/>
+    module.exports<br/>
+  3. 如何依赖模块:<br/>
+    require()<br/>
+  4. 如何使用模块:<br/>
+    seajs.use()<br/>
+
+  <pre><code>(function(require, exports, module){}</code></pre>
+<script src="./js/libs/sea.js"></script>
+<script>
+  seajs.use('./js/modules/main')
+</script>
+</body>
+</html>
