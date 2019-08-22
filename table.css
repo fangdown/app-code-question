@@ -1,0 +1,77 @@
+html {
+  font-size:100%;
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%
+}
+a:focus {
+  outline:thin dotted #333;
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px
+}
+a:hover,a:active {
+  outline:0
+}
+ul,ol {
+  padding:0;
+  margin:0;
+  list-style:none
+}
+li {
+  line-height:20px
+}
+ul.inline,ol.inline {
+  margin-left:0;
+  list-style:none
+}
+ul.inline > li,ol.inline > li {
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  padding-left:5px;
+  padding-right:5px
+}
+ul.table {
+  clear:both;
+  margin:0 0 16px 5px;
+}
+.table ul {
+  border-left:1px solid #D6DBE0;
+  border-top:1px solid #D6DBE0;
+  margin-bottom:15px;
+  margin-right:-1px;
+  margin-left:0px;
+  overflow:auto;
+}
+.table ul li {
+  float:left;
+  width:25%;
+  list-style:none;
+  background:none;
+  padding:0px;
+  margin:0px;
+  text-align:center;
+}
+.table ul li a {
+  border-bottom:1px solid #D6DBE0;
+  border-right:1px solid #D6DBE0;
+  display:block;
+  height:22px;
+  overflow:hidden;
+  padding:6px 5px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+  font-weight:bold;
+}
+.table ul li a:hover,.table ul li a.hover04 {
+  border-bottom:2px solid #F60;
+  font-weight:bold;
+  height:21px;
+  color:#F60;
+  text-decoration:none;
+}
+.table ul li img {
+  margin:0 10px 0 5px;
+  position:relative;
+  top:-1px;
+}
