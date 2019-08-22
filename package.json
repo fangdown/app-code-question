@@ -1,0 +1,25 @@
+{
+  "name": "app-code-question",
+  "version": "1.0.0",
+  "description": "code",
+  "main": "stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangdown/app-code-question.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangdown/app-code-question/issues"
+  },
+  "homepage": "https://github.com/fangdown/app-code-question#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}

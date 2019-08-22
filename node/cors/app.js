@@ -1,0 +1,6 @@
+const express = require('express')
+const cors = require('cors')
+const app = express()
+app.use(cors())
+app.get('/', (req, res) => res.send('来自跨域的请求'))
+app.listen(16010, () => console.log('Example app listening on port http://127.0.0.1:16010'))

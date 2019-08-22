@@ -1,12 +1,7 @@
 # code-question
 ## JavaScript 
 
-我在我的 [Instagram](https://www.instagram.com/theavocoder) 上每天都会发布 JavaScript 的多选问题，并且同时也会在这个仓库中发布。
 
-从基础到进阶，测试你有多了解 JavaScript，刷新你的知识，或者帮助你的 coding 面试！
-:muscle: :rocket: 我每周都会在这个仓库下更新新的问题。
-
-答案在问题下方的折叠部分，点击即可展开问题。祝你好运 :heart:
 
 ---
 
