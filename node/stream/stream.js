@@ -26,7 +26,7 @@ const path = require('path')
 const server = http.createServer(function(req, res){
   const method = req.method
   if(method === 'GET'){
-    const filename = path.resolve(__dirname, './static/source.txt')
+    const filename = path.resolve(__dirname, '../../static/source.txt')
     // fs.readFile(filename, function(err, data){
     //   res.end(data)
     // })
