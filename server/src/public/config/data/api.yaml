@@ -1,0 +1,14 @@
+# API域名列表
+
+host:
+  # 本地运行环境
+  dev: http://test.api.rabbitpre.com
+  # test环境
+  test: http://test.innerapi.rabbitpre.com
+  # beta环境
+  beta: http://beta.innerapi.rabbitpre.com
+  # 生产环境
+  prod: http://innerapi.rabbitpre.com
+
+# API请求超时配置
+timeout: 15000

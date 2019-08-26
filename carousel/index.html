@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轮播图设计</title>
+  <style>
+    .carousel{
+      position: relative;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    .panels{
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    .panel{
+      display: inline-block;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .panel:first-child{
+      z-index: 10;
+    }
+    .panel-content{
+      display: inline-block;
+    }
+    .panel1{
+      background-color: lightcoral;
+    }
+    .panel2{
+      background-color: lightgoldenrodyellow;
+    }
+    .panel3{
+      background-color: lightgrey;
+    }
+    .panel4{
+      background-color: lightskyblue;
+    }
+    .action{
+      display: flex;
+      align-items: center;
+    }
+    .action .prev{
+      order: 1;
+      cursor: pointer;
+    }
+    .action .next{
+      order: 3;
+      cursor: pointer;
+    }
+    .action .dots{
+      order: 2;
+      flex: 1;
+      text-align:center;
+    }
+    .dots span{
+      width: 6px;
+      height: 4px;
+      border-radius: 2px;
+      background: #ddd;
+      display: inline-block;
+      transition: width .3s;
+      cursor: pointer;
+    }
+    .dots span.active{
+      width: 10px;
+      background: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="panels">
+      <a href="#" class="panel panel1">
+        <div class="panel-content">内容1</div>
+      </a>
+      <a href="#" class="panel panel2">
+        <div class="panel-content">内容2</div>
+      </a>
+      <a href="#" class="panel panel3">
+        <div class="panel-content">内容3</div>
+      </a>
+      <a href="#" class="panel panel4">
+        <div class="panel-content">内容4</div>
+      </a>
+    </div>
+    <div class="action">
+      <span class="prev">上一个</span>
+      <span class="next">下一个</span>
+      <div class="dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <script src="./carousel.js"></script>
+  <script>
+    new Carousel(document.querySelector('.carousel'))
+  </script>
+</body>
+</html>

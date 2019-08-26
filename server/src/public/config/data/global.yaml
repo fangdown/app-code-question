@@ -1,0 +1,33 @@
+# 服务器框架配置
+
+# 当前运行环境
+# 支持的环境变量：dev-本地开发环境，test-test环境，beta-beta环境，prod-生产环境
+RUNTIME_ENV: dev
+
+# Node运行环境
+# development-开发模式，production-生产模式
+NODE_ENV: development
+
+name: RP-Node-Server
+version: 1.0.0
+debug: false
+
+host: localhost
+# web服务器监听端口，应当在业务项目中覆盖配置
+port: 80
+
+# main domain
+main_domain: rabbitpre.com
+main_host:
+  dev: https://test.rabbitpre.com
+  test: https://test.rabbitpre.com
+  beta: https://beta.rabbitpre.com
+  prod: https://www.rabbitpre.com
+
+# ad host
+ad_app_host: http://95car.net
+
+# shift host
+shift_app_host: http://253cn.com
+
+caculateAppTime: 2015-08-28T03:27:55.209Z

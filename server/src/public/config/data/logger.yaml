@@ -1,0 +1,63 @@
+# 日志配置
+
+# 是否启用日志服务，默认启用
+enable: true
+# 日志服务配置
+configure:
+  appenders:
+    # 控制台打印日志
+    console:
+      type: console
+    # HTTP请求日志
+    access:
+      # 按日期输出日志文件
+      type: dateFile
+      filename: logs/access
+      pattern: .yyyy-MM-dd.log
+      alwaysIncludePattern: true
+      # 最大日志容量：10Mb
+      maxLogSize: 10485760
+      compress: false
+      category: http
+    errorFile:
+      type: dateFile
+      filename: logs/error
+      pattern: .yyyy-MM-dd.log
+      alwaysIncludePattern: true
+      # 最大日志容量：10Mb
+      maxLogSize: 10485760
+      compress: false
+    # 错误日志
+    error:
+      type: logLevelFilter
+      level: error
+      appender: errorFile
+    # 其他信息日志
+    out:
+      type: dateFile
+      filename: logs/out
+      pattern: .yyyy-MM-dd.log
+      alwaysIncludePattern: true
+      # 最大日志容量：10Mb
+      maxLogSize: 10485760
+      compress: false'
+  categories:
+    http:
+      appenders:
+        - console
+      level: info
+    default:
+      appenders:
+        dev:
+          - console
+        test:
+          - console
+        # 生产环境，收集日志到ELK
+        prod:
+          - console
+      level:
+        dev: debug
+        test: info
+        prod: info
+  pm2: true
+  pm2InstanceVar: INSTANCE_ID

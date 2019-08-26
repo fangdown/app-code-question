@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试jsonp</title>
+</head>
+<body>
+  jsonp获取数据
+  <button onclick="sendJsonp()">点击发送jsonp</button>
+  <p id="result"></p>
+  <script>
+    function sendJsonp(){
+      let url = 'http://localhost:11000/api/code/jsonp/flightResult?code=2019&callback=flightHandler'
+      let script = document.createElement('script')
+      script.src = url
+      document.getElementsByTagName('head')[0].appendChild(script)
+    }
+    
+    function flightHandler(data){
+      document.getElementById('result').innerText(data.content)
+    }
+  </script>
+</body>
+</html>

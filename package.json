@@ -4,6 +4,8 @@
   "description": "code",
   "main": "stream.js",
   "scripts": {
+    "dev-server": "nodemon",
+    "build-server": "cd server && cross-env NODE_ENV=production npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
