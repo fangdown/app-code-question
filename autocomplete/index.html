@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>autocomplete设计</title>
+</head>
+<body>
+  <style>
+    .box{
+      position: relative;
+    }
+    #searchInput{
+      height: 20px;
+    }
+    #ul{
+      position: absolute;
+      top: 20px;
+    }
+  </style>
+  <div class="box">
+    <input type="text" id='searchInput'>
+    <ul id="ul"></ul>
+  </div>
+  <script src="./autocomplete.js"></script>
+</body>
+</html>

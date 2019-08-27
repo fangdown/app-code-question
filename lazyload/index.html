@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片懒加载设计</title>
+</head>
+<body>
+  <style>
+    img{
+      width: 400px;
+      height: 300px;
+    }
+    .content{
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+  <img lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2656628652,2746692771&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"   alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2115448595,3265608281&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2078897288,2205081274&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=508405853,1332232464&fm=26&gp=0.jpg"  src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3422346977,2553788595&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1650661538,3710408873&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <div class="content">
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    滚动内容<br/>
+    <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3438316799,3998741358&fm=26&gp=0.jpg"  src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif" ><br/>
+    <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596886176,4237779409&fm=26&gp=0.jpg"   src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+    <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2356505222,2932087731&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+    <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1344604488,1645725421&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"   alt=""><br/>
+  </div>
+  <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2211394105,3407688814&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3818249532,1558495751&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1044899256,3472348009&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=629828505,2502519811&fm=26&gp=0.jpg"  src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=312440173,484202537&fm=26&gp=0.jpg"   src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3782039966,340751596&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"  alt=""><br/>
+  <img lazy-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=175171,1958553578&fm=26&gp=0.jpg" src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif"   alt=""><br/>
+  <script src="./lazyload.js"></script>
+  <script>
+    lazyload()
+  </script>
+</body>
+</html>
