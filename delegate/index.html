@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件委托函数</title>
+</head>
+<body>
+  <div id="list">
+    <div class="content">
+      <button class="btn">点击按钮，父级list监听，响应事件</button>
+    </div>
+  </div>
+  <script src="./delegate.js"></script>
+  <script>
+    delegate('list', 'onclick', 'btn', function(){  
+      const div = document.createElement('div')
+      div.innerText = '我被点击才生成'
+      document.getElementsByClassName('content')[0].appendChild(div)  
+    });
+  </script>
+</body>
+</html>
