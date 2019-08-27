@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>两个大数相加</title>
+  <link rel="stylesheet" href="../assets/css/typing.css">
+  <style>
+    #source{
+      display: none
+    }
+    #output {
+      height: 500px;
+      background: #282828;
+      color: #fff;
+      padding: 20px;
+      font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+      font-size: 18px;
+      line-height: 26px;
+    }
+  </style>
+</head>
+<body>
+  ~~取反操作
+  <a href="http://git.fangdown.cn/m/496.html">代码说明</a>
+  <div id="source">
+    <pre>
+      function sumBigNumber(a, b) {
+        var res = '',
+            temp = 0;
+        a = a.split('');
+        b = b.split('');
+        var loop = 0;
+        while (a.length || b.length || temp) {
+          var pa = cpa =a.pop()
+          var pb = cpb = b.pop()
+          temp += ~~pa + ~~pb;
+          res = (temp % 10) + res;
+          temp = temp > 9;
+        }
+        return res.replace(/^0+/, '');
+      }
+      var result = sumBigNumber('3782647863278468012934679', '23784678091370408971329048718239749083'); 
+    </pre>
+  </div>
+  <div id="output">
+    
+  </div>
+  <script src="../assets/js/typing.js"></script>
+  <script>
+  function sumBigNumber(a, b) {
+    var res = '',
+        temp = 0;
+    a = a.split('');
+    b = b.split('');
+    var loop = 0;
+    while (a.length || b.length || temp) {
+      var pa = cpa =a.pop()
+      var pb = cpb = b.pop()
+      temp += ~~pa + ~~pb;
+      if(loop < 10){
+        console.log('temp:', temp)
+        console.log('a.pop():', cpa)
+        console.log('~~a.pop():', ~~cpa)
+        console.log('b.pop():', cpb)
+        console.log('~~b.pop():', ~~cpb)
+      }
+      loop++
+      res = (temp % 10) + res;
+      temp = temp > 9;
+    }
+    return res.replace(/^0+/, '');
+  }
+  var result = sumBigNumber('3782647863278468012934679', '23784678091370408971329048718239749083'); 
+  console.log('result', result)
+  var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('output'),
+      delay: 120
+  });
+  typing.start();
+  </script>
+ 
+</body>
+</html>
