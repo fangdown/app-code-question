@@ -11,15 +11,22 @@
   <button onclick="sendJsonp()">点击发送jsonp</button>
   <p id="result"></p>
   <script>
+    /**
+     * 设计思路
+     * 创建script元素
+     * src为node服务，带回调参数名
+     * 将script添加到head标签中
+     * 提前写好回调函数
+     * node返回函数名及参数cb(data)
+     * */
     function sendJsonp(){
       let url = 'http://localhost:11000/api/code/jsonp/flightResult?code=2019&callback=flightHandler'
       let script = document.createElement('script')
       script.src = url
       document.getElementsByTagName('head')[0].appendChild(script)
     }
-    
     function flightHandler(data){
-      document.getElementById('result').innerText(data.content)
+      document.getElementById('result').innerHTML = data.content
     }
   </script>
 </body>
