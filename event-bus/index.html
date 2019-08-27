@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实现eventbus</title>
+</head>
+<body>
+  <button onclick="handleEvent()">触发event</button>
+  <div class="result"></div>
+  <script src="./event-bus.js"></script>
+  <script>
+    //eq 
+    const emitter = new EventEmitter()
+    emitter.on('name', name => {
+      console.log(` i am ${name}`)
+    })
+    emitter.on('name', name => {
+      console.log(` you are ${name}`)
+      document.getElementsByClassName('result')[0].innerHTML = `EventEmitter， you are ${name}`
+    })
+    function handleEvent(){
+      emitter.emit('name', 'fang')
+    }
+  </script>
+</body>
+</html>
