@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>拖拽设计</title>
+</head>
+<body>
+  <style>
+    .box{
+      position: relative; /* 不加不动 */
+      width: 200px;
+      height: 200px;
+      border: 1px solid #eeeeee;
+    }
+  </style>
+  <div class="box"></div>
+  <script src="./drag.js"></script>
+  <script>
+    const ele = document.getElementsByClassName('box')[0]
+    new Drag(ele)
+  </script>
+</body>
+</html>
