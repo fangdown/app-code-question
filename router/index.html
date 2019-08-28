@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>路由router设计</title>
+</head>
+<body>
+  <ul>
+    <li><a href="#/">turn yellow</a></li>
+    <li><a href="#/blue">turn blue</a></li>
+    <li><a href="#/green">turn green</a></li>
+  </ul>
+  <script src="./router-hash.js"></script>
+  <!-- <script src="./router-history.js"></script> -->
+  <script>
+    window.Router = new Routers();
+    Router.pushRoute('/', function(){changeBgColor('yellow')})
+    Router.pushRoute('/blue', function(){changeBgColor('blue')})
+    Router.pushRoute('/green', function(){changeBgColor('green')})
+    var content = document.querySelector('body');
+    function changeBgColor(color) {
+      content.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
