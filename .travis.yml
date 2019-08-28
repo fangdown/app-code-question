@@ -1,39 +1,17 @@
 language: node_js
-# nodejs版本
-node_js: 
-    - '8'
-
-# Travis-CI Caching
+node_js: 10.15
+sudo: required
+addons:
+  ssh_known_hosts: 148.70.216.46
 cache:
   directories:
-    - node_modules
-
-
-# S: Build Lifecycle
+  - node_modules
+before_install:
+- openssl aes-256-cbc -K $encrypted_13380183eaa9_key -iv $encrypted_13380183eaa9_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 install:
-  - npm install
-
-before_script:
-
-# 无其他依赖项所以执行npm run build 构建就行了
-script:
-  - npm run build
-
-after_script:
-  - cd ./dist
-  - git init
-  - git config user.name "${U_NAME}"
-  - git config user.email "${U_EMAIL}"
-  - git add .
-  - git commit -m "Update tools"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
-# E: Build LifeCycle
-
-#指定分支，只有指定的分支提交时才会运行脚本
-branches:
-  only:
-    - master
-env:
- global:
-   # 我将其添加到了travis-ci的环境变量中
-   #- GH_REF: github.com/yimogit/metools.git 
+- npm install
+after_success:
+- ssh root@148.70.216.46 StrictHostKeyChecking=no 'cd /code/app-code-question && git
+  pull'
