@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dialog组件设计</title>
+  <link rel="stylesheet" href="./dialog.css">
+</head>
+<body>
+  <button onclick="show()">弹出对话框dialog</button>
+  <script src="./dialog.js"></script>
+  <script>
+    function show(){
+      dialog.show({
+        title: '消息提示',
+        content: '消息正文',
+        btns:['确定', '取消'],
+        confirm: function(){
+          console.log('ok')
+        },
+        cancel: function(){
+          console.log('cancel')
+        }
+      })
+    }
+  </script>
+</body>
+</html>
