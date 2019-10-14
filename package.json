@@ -21,6 +21,7 @@
   "homepage": "https://github.com/fangdown/app-code-question#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "ejs": "^2.6.2",
     "express": "^4.17.1"
   }
