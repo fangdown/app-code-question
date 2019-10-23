@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ajax编写</title>
+  <script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
 </head>
 <body>
   <script src="./ajax.js"></script>
   <script>
-    ajax('http://127.0.0.1:16010', 'get')
+    // ajax('http://127.0.0.1:16010', 'get')
+    async function test(){
+      let result = await axios.get('http://localhost:7200/api/storyClass')
+      console.log('result',  result)
+      console.log('result',  typeof result)
+    }
+    test()
   </script>
 </body>
 </html>
