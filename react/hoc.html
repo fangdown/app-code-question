@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>高价组件</title>
+</head>
+<body>
+  <script>
+    // 属性代理
+      function visibleHoc(WrappedComponent){
+        return class extends Component{
+          render(){
+            const {visible, ...props} = this.props
+            if(visible === false) return null
+            return <WrappedComponent {...props} />
+          }
+        }
+      }
+      // 反向继承
+      function reverseHoc(WrappedComponent){
+        return class extends WrappedComponent{
+          render(){
+            return super.render(0)
+          }
+        }
+      }
+  </script>
+</body>
+</html>

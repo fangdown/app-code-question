@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hooks原理</title>
+</head>
+<body>
+  <script>
+    let _state;
+    function useState(initialValue){
+      _state = _state | initialValue
+      function setSate(newState){
+        _state = newState
+        render()
+      }
+    }
+    return [_state, setState]
+
+
+    let _deps 
+    function useEffect(callback, depArray){
+      const hasNoDeps = !depArray
+      // 传入的依赖和已知依赖是否相等
+      const hasChangeDeps = _deps ? !depArray.every((el ,i) => el === _deps[i]) : true
+      // 没有依赖或者依赖变化，执行回调
+      if(hasNoDeps || hasChangeDeps){
+        callback()
+        _deps = depArray
+      }
+    }
+
+    // 加入游标版
+    let memoizedState = []; // hooks 存放在这个数组
+    let cursor = 0; // 当前 memoizedState 下标
+
+    function useState(initialValue) {
+      memoizedState[cursor] = memoizedState[cursor] || initialValue;
+      const currentCursor = cursor;
+      function setState(newState) {
+        memoizedState[currentCursor] = newState;
+        render();
+      }
+      return [memoizedState[cursor++], setState]; // 返回当前 state，并把 cursor 加 1
+    }
+
+    function useEffect(callback, depArray) {
+      const hasNoDeps = !depArray;
+      const deps = memoizedState[cursor];
+      const hasChangedDeps = deps
+        ? !depArray.every((el, i) => el === deps[i])
+        : true;
+      if (hasNoDeps || hasChangedDeps) {
+        callback();
+        memoizedState[cursor] = depArray;
+      }
+      cursor++;
+    }
+  </script>
+</body>
+</html>
