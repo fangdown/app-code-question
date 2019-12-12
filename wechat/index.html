@@ -33,7 +33,7 @@
         ], // 必填，需要使用的JS接口列表
       });
       window.wx.ready(() => {
-        setWxShare(title, desc, imgUrl, link);
+        setWxShare(title, desc, imgUrl, window.location.href);
       });
       function setWxShare(
         title,
