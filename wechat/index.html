@@ -13,6 +13,9 @@
   测试分享
 
   <script>
+    let title = '努力奋斗'
+    let desc = '把握机遇'
+    let imgUrl = 'http://p-cdn4.rabbitpre.com/9cf6e22e-bcc2-4bc4-b9cc-50c8732d7bdf?imageMogr2/auto-orient|imageMogr2/thumbnail/140x140'
     axios.get(`https://api.fangdown.cn/api/wechat/sign?url=http://code.fangdown.cn/wechat/`).then(res =>{
       console.log('res', res)
       const {data = {}} = res.data
@@ -29,6 +32,37 @@
           'onMenuShareAppMessage'
         ], // 必填，需要使用的JS接口列表
       });
+      window.wx.ready(() => {
+        setWxShare(title, desc, imgUrl, link);
+      });
+      function setWxShare(
+        title,
+        desc,
+        imgUrl,
+        link,
+        ) {
+          // 自定义“分享给朋友”及“分享到QQ”按钮的分享内容
+          const dealLink = link || window.location.href;
+          window.wx.onMenuShareTimeline({
+            title, // 分享标题
+            link: dealLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl , // 分享图标
+            success: function() {
+              console.log('分享成功')
+            },
+          });
+
+          window.wx.onMenuShareAppMessage({
+            title, // 分享标题
+            desc, // 分享描述
+            link: dealLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl, // 分享图标
+            success: function() {
+              console.log('分享成功')
+            },
+          });
+        }
+
     })
   </script>
 </body>
