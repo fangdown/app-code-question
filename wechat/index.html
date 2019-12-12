@@ -15,7 +15,8 @@
     let title = '努力奋斗'
     let desc = '把握机遇'
     let imgUrl = 'http://p-cdn4.rabbitpre.com/9cf6e22e-bcc2-4bc4-b9cc-50c8732d7bdf?imageMogr2/auto-orient|imageMogr2/thumbnail/140x140'
-    axios.get(`https://api.fangdown.cn/api/wechat/sign?url=${encodeURIComponent(window.location.href.split('#')[0])})`).then(res =>{
+    let url = encodeURIComponent(window.location.href.split('#')[0])
+    axios.get(`https://api.fangdown.cn/api/wechat/sign?url=${url}`).then(res =>{
       console.log('res', res)
       const {data = {}} = res.data
       const {timestamp, nonceStr, signature} = data
