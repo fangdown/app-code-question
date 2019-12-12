@@ -27,13 +27,13 @@
         nonceStr, // 必填，生成签名的随机串
         signature, // 必填，签名
         jsApiList: [
-          'checkJsApi',
           'onMenuShareTimeline',
-          'onMenuShareAppMessage'
-        ], // 必填，需要使用的JS接口列表
+          'onMenuShareAppMessage',
+          'checkJsApi',
+        ], // 必填，需要使用的JS接口列表 ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage']
       });
       window.wx.ready(() => {
-        setWxShare(title, desc, imgUrl, window.location.href);
+        setWxShare(title, desc, imgUrl, 'http://code.fangdown.cn/wechat/');
       });
       function setWxShare(
         title,
