@@ -1,0 +1,16 @@
+// TCP协议 即时通讯
+const net = require('net')
+const chatServer = net.createServer()
+const clientList = []
+chatServer.on('connection', client => {
+  client.write('Hi\n')
+  clientList.push(client)
+  client.on('data', data =>{
+    console.log('receive', data.toString())
+    clientList.forEach(v => v.write(data))
+  })
+})
+chatServer.listen(9000)
+
+// node net.js  开启
+// telnet 127.0.0.1 9000 连接
